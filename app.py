@@ -52,7 +52,7 @@ def predict_tips():
     prediction = rf.predict(input_df)
 
     # LlamaDA A la funcion generar_respuesta que se encuentra en el archivo IA :)
-    respuesta_openai = generar_respuesta(int(prediction[0]))
+    respuesta_openai = generar_respuesta(int(prediction[0]),input_data)
 
     #  predicción y la respuesta de GPT :V 
     return jsonify({'prediction': int(prediction[0]), 'respuesta_Api_GPT': respuesta_openai})
